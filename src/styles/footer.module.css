@@ -1,0 +1,23 @@
+.footerWrapper {
+    background-color: #011627;
+    padding-top: 4rem;
+}
+
+.legalText {
+    font-size: 16px;
+    color: #5353539a;
+}
+
+.navList > a {
+    color: #989897;
+    list-style: none;
+}
+
+.navList > a:hover {
+    color: rgb(49, 49, 49);
+    text-decoration: none;
+}
+
+.borderOutline {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}

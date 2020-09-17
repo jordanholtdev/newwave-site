@@ -1,0 +1,11 @@
+.parentContainer {
+    background-color: #011627;
+}
+
+.carImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+    height: 40vh;
+}

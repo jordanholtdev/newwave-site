@@ -1,0 +1,21 @@
+.navWrapper {
+    background-color: #0116275d;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.navItem {
+    margin-bottom: 0;
+    margin-right: 1rem;
+}
+
+.navLinkItem {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.navLinkItem:hover {
+    color: rgba(255, 255, 255, 0.56);
+    text-decoration: none;
+}

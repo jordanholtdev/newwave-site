@@ -1,0 +1,13 @@
+.contactWrapper {
+    background-color: #011627;
+    margin-top: 5rem;
+}
+
+.contactList {
+    list-style: none;
+    margin: 0 auto;
+}
+
+.contactList > li {
+    margin-bottom: 1rem;
+}
