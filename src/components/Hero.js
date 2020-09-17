@@ -10,6 +10,7 @@ import heroStyles from "../styles/hero.module.css"
 const Hero = () => {
 
   // hero content vars
+  let heroContainer = useRef(null);
   let title = useRef(null);
   let copy = useRef(null);
   let contactBtn = useRef(null);
@@ -17,7 +18,8 @@ const Hero = () => {
   let tl = gsap.timeline();
   // animations
   useEffect(() => {
-    tl.from(title, {duration: 1.5, ease: "power3.out", y: 150,  opacity: 0, delay: 1})
+    tl.to(heroContainer, {visibility: "visible"})
+      .from(title, {duration: 1.5, ease: "power3.out", y: 150,  opacity: 0, delay: 1})
       .from(copy, {duration: 1, ease: "power3.out", y: 50, opacity: 0 }, "-=1")
       .from(contactBtn, {duration: 1, ease: "power3.out", y: 50, opacity: 0 }, "-=1")
   });
@@ -42,7 +44,7 @@ const Hero = () => {
     >
       <div className={heroStyles.imgFilter}>
         <div className={heroStyles.heroContent}>
-          <Container>
+          <Container style={{ visibility: "hidden"}}  ref={el => (heroContainer = el)}>
             <div className={heroStyles.heroContentLine1}>            
                 <h1 className={heroStyles.title} ref={el => (title = el)}>
                   new<span className={heroStyles.waveTitle}>wave</span>
