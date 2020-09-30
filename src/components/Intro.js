@@ -26,7 +26,6 @@ const Intro = () => {
           start: "top 90%",
           end: "center",
           scrub: 0.5,
-          markers: true,
         },
       });
   
