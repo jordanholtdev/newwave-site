@@ -1,7 +1,8 @@
 .rowContent {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .imgContainer {
-    overflow: hidden;
+  overflow: hidden;
+  max-width: 175px;
 }
