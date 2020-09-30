@@ -1,8 +1,7 @@
-import React, { useRef, useEffect } from "react";
-import { Link } from "gatsby";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Button } from "react-bootstrap";
-import gsap  from "gsap";
+import React, { useRef, useEffect } from "react"
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Container } from "react-bootstrap"
+import gsap from "gsap"
 
 import logo from "../images/logo-nw.svg"
 import heroStyles from "../styles/hero.module.css"
@@ -12,31 +11,26 @@ const Hero = () => {
   let heroContainer = useRef(null)
   let title = useRef(null)
   let copy = useRef(null)
-  let contactBtn = useRef(null)
 
   let tl = gsap.timeline()
   // animations
   useEffect(() => {
     tl.to(heroContainer, { visibility: "visible" })
       .from(title, {
-        duration: 1.5,
+        duration: 1,
         ease: "power3.out",
         y: 150,
         opacity: 0,
         delay: 1,
       })
       .from(copy, { duration: 1, ease: "power3.out", y: 50, opacity: 0 }, "-=1")
-      .from(
-        contactBtn,
-        { duration: 1, ease: "power3.out", y: 50, opacity: 0 },
-        "-=1"
-      )
   })
 
   return (
     <Container fluid className={heroStyles.heroWrapper}>
       <div className={heroStyles.heroContent}>
         <Container
+          fluid
           style={{ visibility: "hidden" }}
           ref={el => (heroContainer = el)}
         >
@@ -47,18 +41,7 @@ const Hero = () => {
             <p className="lead text-dark" ref={el => (copy = el)}>
               The innovation behind the brands you know
             </p>
-          </div>
-          <div className={heroStyles.heroContentLine3}>
-            <Link to="#contact">
-              <Button
-                className={heroStyles.btnStyles}
-                size="lg"
-                ref={el => (contactBtn = el)}
-              >
-                Contact
-              </Button>
-            </Link>
-          </div>
+          </div>          
         </Container>
       </div>
     </Container>
