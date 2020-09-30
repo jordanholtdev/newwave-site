@@ -30,10 +30,7 @@ const Header = ({ siteTitle }) => (
           </Nav.Item>
           <Nav.Item as="li" className={headerStyles.navItem}>
             <Link  className={headerStyles.navLinkItem} to="#contact">Contact</Link>
-          </Nav.Item>
-          <Nav.Item as="li" className={headerStyles.navItem}>
-            <Link className={headerStyles.navLinkItem} to="#team">Team</Link>
-          </Nav.Item>
+          </Nav.Item>         
         </Nav>
         <Nav></Nav>
       </Navbar.Collapse>

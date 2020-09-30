@@ -25,10 +25,10 @@ const Partners = () => {
         <Container className="pt-5">
           <Col className="text-center text-dark">
             <Container className="pt-5">            
-              <h1 className="lead">
+              <h2 className="muted">
                 New Wave partners with leading grocery, retail, and on-line
                 merchants in the US and Canada.{" "}
-              </h1>
+              </h2>
                   <Container className={partnerStyles.carImg}>
                     <Img fluid={data.slide1.childImageSharp.fluid} />
                   </Container>                                 
