@@ -19,7 +19,6 @@ const Intro = () => {
 
     // gsap animations
    
-
     useEffect(() => {
       let introTL = gsap.timeline({
         scrollTrigger: {
