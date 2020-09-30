@@ -1,7 +1,12 @@
-.rowContent {
-    overflow: hidden;
+.bgImage {
+    width: 100%;
+    height: 90vh;
 }
 
-.imgContainer {
-    overflow: hidden;
+.textWrapper {
+    position: relative;
+    top: 120px;
+    max-width: 900px;
+    height: 100%;  
+    justify-content: center;
 }

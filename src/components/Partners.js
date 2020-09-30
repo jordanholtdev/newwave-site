@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Col, Carousel } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 
 import partnerStyles from "../styles/partners.module.css";
 
@@ -17,50 +17,21 @@ const Partners = () => {
             }
           }
         }
-        slide2: file(relativePath: { eq: "mongoDB.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        slide3: file(relativePath: { eq: "logo-node.png" }) {
-            childImageSharp {
-              fluid(maxWidth: 600) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
       }
     `)
 
     return (
-      <Container fluid className={partnerStyles.parentContainer}>
-        <Container>
-          <Col className="text-center text-light">
-            <Container className="pt-5">
-              <h1 className="display-4">Partners</h1>
-              <p className="lead">
+      <Container fluid>
+        <Container className="pt-5">
+          <Col className="text-center text-dark">
+            <Container className="pt-5">            
+              <h2 className="muted">
                 New Wave partners with leading grocery, retail, and on-line
                 merchants in the US and Canada.{" "}
-              </p>
-              <Carousel indicators={false}>
-                <Carousel.Item>
+              </h2>
                   <Container className={partnerStyles.carImg}>
                     <Img fluid={data.slide1.childImageSharp.fluid} />
-                  </Container>                  
-                </Carousel.Item>
-                <Carousel.Item>
-                  <Container className={partnerStyles.carImg}>
-                    <Img fluid={data.slide2.childImageSharp.fluid} />
-                  </Container>                  
-                </Carousel.Item>
-                <Carousel.Item>
-                  <Container className={partnerStyles.carImg}>
-                    <Img fluid={data.slide3.childImageSharp.fluid} />
-                  </Container>                  
-                </Carousel.Item>
-              </Carousel>
+                  </Container>                                 
             </Container>
           </Col>
         </Container>

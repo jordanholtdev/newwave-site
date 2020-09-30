@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import gsap from "gsap";
+import BackgroundImage from "gatsby-background-image"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import introStyles from "../styles/intro.module.css";
 
@@ -15,34 +15,33 @@ const Intro = () => {
     // animation vars
 
     let triggerEl = useRef(null);
-    let imageCard = useRef(null);
+    let title = useRef(null);
 
     // gsap animations
    
-
     useEffect(() => {
       let introTL = gsap.timeline({
         scrollTrigger: {
           trigger: triggerEl,         
-          start: "top 90%",
-          end: "bottom",
+          start: "center bottom",
+          end: "center top",
+          scrub: true,
         },
       });
-
-      introTL.from(imageCard, {
-        duration: 2,
-        x: '-600',
+  
+      introTL.from(title, {
+        y: '100',
         opacity: 0,
         ease: "power3.inout",       
       })
     });
-
+    
 
     const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "lightbulb-image.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "corn-field.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 900) {
+          fluid(maxWidth: 1800) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -51,35 +50,23 @@ const Intro = () => {
   `)
 
   return (
-    <Container className="my-5"  id="intro" ref={el => (triggerEl = el)}>
-      <Row className={introStyles.rowContent}>
-        <Col lg={true} className="m-4" ref={el => (imageCard = el)}>
-          <div className={introStyles.imgContainer} >
-          <Img fluid={data.placeholderImage.childImageSharp.fluid}  />     
-          </div>   
-        </Col>
-        <Col className="m-4 align-self-center">
-          <Card >
-            <Card.Body>
-              <p className="lead">
-                We provide excellence to the part of the value chain we know
-                best and pick great partners to build the rest.
-              </p>
-              <p>
-                From product ideation, value definition, intellectual property
-                development, partner identification and management, through
-                product development, packaging and launch, we fill the gaps in
-                the value chain, creating world-class solutions for the world’s
-                leading brands.
-              </p>
-              <p>
-                We deliver industry-leading household cleaning products
-                including single dose, multi-chamber dishwasher and laundry
-                detergent pacs, OXI powered stain removers, and more.
-              </p>
-            </Card.Body>
-          </Card>
-        </Col>
+    <Container fluid className="mt-5" id="intro" ref={el => (triggerEl = el)}>
+      <Row>
+        <BackgroundImage
+          Tag="section"
+          className={introStyles.bgImage}
+          fluid={data.placeholderImage.childImageSharp.fluid}
+          backgroundColor={`#040e18`}
+        >
+          <Container>
+            <Row className={introStyles.textWrapper} ref={el => (title = el)}>
+            <h1 className="text-center" >
+              We provide excellence to the part of the value chain we know best
+              and pick great partners to build the rest.            
+            </h1>
+            </Row>           
+          </Container>
+        </BackgroundImage>
       </Row>
     </Container>
   )

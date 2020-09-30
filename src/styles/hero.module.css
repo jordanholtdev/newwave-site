@@ -1,15 +1,5 @@
-.bgWrapper {
-  width: 100%;
+.heroWrapper {
   height: 100vh;
-  justify-content: center;
-  background-position: top;
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
-.imgFilter {
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .heroContent {
@@ -30,12 +20,6 @@
 
 .heroContentLine3 {
   overflow: hidden;
-}
-
-.title {
-    color: white;
-    margin-bottom: 0.5rem;
-    font-size: calc(70px + (150 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .waveTitle {

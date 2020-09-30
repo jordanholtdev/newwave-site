@@ -8,7 +8,7 @@ import logo from "../images/logo-nw.svg";
 import headerStyles from "../styles/header.module.css";
 
 const Header = ({ siteTitle }) => (
-  <Navbar collapseOnSelect expand="lg" className={headerStyles.navWrapper}>
+  <Navbar collapseOnSelect expand="lg" className={headerStyles.navWrapper} sticky="top">
     <Container>
       <Navbar.Brand href="#home">
         <img
@@ -30,10 +30,7 @@ const Header = ({ siteTitle }) => (
           </Nav.Item>
           <Nav.Item as="li" className={headerStyles.navItem}>
             <Link  className={headerStyles.navLinkItem} to="#contact">Contact</Link>
-          </Nav.Item>
-          <Nav.Item as="li" className={headerStyles.navItem}>
-            <Link className={headerStyles.navLinkItem} to="#team">Team</Link>
-          </Nav.Item>
+          </Nav.Item>         
         </Nav>
         <Nav></Nav>
       </Navbar.Collapse>
