@@ -23,15 +23,15 @@ const Intro = () => {
       let introTL = gsap.timeline({
         scrollTrigger: {
           trigger: triggerEl,         
-          start: "top 90%",
-          end: "center",
-          scrub: 0.5,
+          start: "center bottom",
+          end: "center top",
+          scrub: true,
+          markers: true,
         },
       });
   
       introTL.from(title, {
-        duration: 1,
-        y: '150',
+        y: '100',
         opacity: 0,
         ease: "power3.inout",       
       })
@@ -60,12 +60,12 @@ const Intro = () => {
           backgroundColor={`#040e18`}
         >
           <Container>
-            <Row className={introStyles.textWrapper}>
-            <h1 className="text-center" ref={el => (title = el)}>
+            <Row className={introStyles.textWrapper} ref={el => (title = el)}>
+            <h1 className="text-center" >
               We provide excellence to the part of the value chain we know best
-              and pick great partners to build the rest.
+              and pick great partners to build the rest.            
             </h1>
-            </Row>
+            </Row>           
           </Container>
         </BackgroundImage>
       </Row>
