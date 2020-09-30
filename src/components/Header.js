@@ -8,7 +8,7 @@ import logo from "../images/logo-nw.svg";
 import headerStyles from "../styles/header.module.css";
 
 const Header = ({ siteTitle }) => (
-  <Navbar collapseOnSelect expand="lg" className={headerStyles.navWrapper}>
+  <Navbar collapseOnSelect expand="lg" className={headerStyles.navWrapper} sticky="top">
     <Container>
       <Navbar.Brand href="#home">
         <img
