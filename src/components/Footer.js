@@ -29,10 +29,7 @@ const Footer = () => {
               </Nav.Item>
               <Nav.Item as="li" className={footerStyles.navList}>
                 <Link to="#contact">Contact</Link>
-              </Nav.Item>
-              <Nav.Item as="li" className={footerStyles.navList}>
-                <Link to="#team">Team</Link>
-              </Nav.Item>
+              </Nav.Item>              
             </Nav>
           </Col>
         </Row>

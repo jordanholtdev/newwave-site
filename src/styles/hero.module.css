@@ -1,5 +1,5 @@
 .heroWrapper {
-  height: 100vh;
+  height: 75vh;
 }
 
 .heroContent {
@@ -8,6 +8,17 @@
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
+}
+
+.subTitle {
+  font-size: calc( 30px + (36 - 30) * (100vw - 400px) / (800 - 400) );
+  line-height: 1.8em;
+  background-color: #1c75bc;
+  background-image: linear-gradient(119deg, #232b2b 0%, #1c75bc 60%);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroContentLine1 {
@@ -20,8 +31,4 @@
 
 .heroContentLine3 {
   overflow: hidden;
-}
-
-.waveTitle {
-  color: white;
 }

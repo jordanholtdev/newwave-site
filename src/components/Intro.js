@@ -62,7 +62,7 @@ const Intro = () => {
             <Row className={introStyles.textWrapper} ref={el => (title = el)}>
             <h1 className="text-center" >
               We provide excellence to the part of the value chain we know best
-              and pick great partners to build the rest.            
+              <span className={introStyles.textAccent}> and pick great partners to build the rest.</span>            
             </h1>
             </Row>           
           </Container>
