@@ -38,9 +38,9 @@ const Hero = () => {
             <img alt="new wave logo" src={logo} ref={el => (title = el)} />
           </div>
           <div className={heroStyles.heroContentLine2}>
-            <p className="lead text-dark" ref={el => (copy = el)}>
+            <h3 className={heroStyles.subTitle} ref={el => (copy = el)}>
               The innovation behind the brands you know
-            </p>
+            </h3>
           </div>          
         </Container>
       </div>
