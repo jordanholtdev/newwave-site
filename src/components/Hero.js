@@ -41,7 +41,7 @@ const Hero = () => {
             <h3 className={heroStyles.subTitle} ref={el => (copy = el)}>
               The innovation behind the brands you know
             </h3>
-          </div>          
+          </div>
         </Container>
       </div>
     </Container>
