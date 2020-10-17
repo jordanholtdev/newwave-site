@@ -17,26 +17,40 @@ const About = () => {
       }
       packet2: file(relativePath: { eq: "adw-purple-green-pac.png" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
+          fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      oxyProduct: file(relativePath: { eq: "oxygen-product.jpg" }) {
+      bathroomCleaner: file(relativePath: { eq: "bathroom-cleaner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      windowCleaner: file(relativePath: { eq: "window-cleaner.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 700) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      handsoapBag: file(relativePath: { eq: "hand-soap-bag.png" }) {
         childImageSharp {
           fluid(maxWidth: 900) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      greenProduct: file(relativePath: { eq: "green-product.jpg" }) {
+      handsoapBottle: file(relativePath: { eq: "hand-soap-bottle.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 900) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      bottleProduct: file(relativePath: { eq: "bottle-product.png" }) {
+      allPurpose: file(relativePath: { eq: "all-purpose.png" }) {
         childImageSharp {
           fluid(maxWidth: 900) {
             ...GatsbyImageSharpFluid
@@ -60,7 +74,7 @@ const About = () => {
           </Col>
         </Row>
         <Row className="py-5 align-items-center">
-          <Col xs={{ span: 12, offset: 0 }} md={{ span: 5, offset: 0 }}>
+          <Col xs={{ span: 12, offset: 0 }} md={{ span: 6, offset: 0 }}>
             <div className={aboutStyles.imgContainer}>
               <Img fluid={data.packet1.childImageSharp.fluid} />
             </div>
@@ -84,7 +98,7 @@ const About = () => {
         <Row className="pt-5 align-items-center">
           <Col
             xs={{ span: 12, order: "first" }}
-            md={{ span: 4, offset: 2, order: "first" }}
+            md={{ span: 4, offset: 1, order: "first" }}
           >
             <h3 className="display-4" style={{ color: "#095391" }}>
               Real world solutions
@@ -98,7 +112,7 @@ const About = () => {
               leading brands.
             </p>
           </Col>
-          <Col xs={{ span: 12, offset: 0 }} md={{ span: 5, offset: 1 }}>
+          <Col xs={{ span: 12, offset: 0 }} md={{ span: 6, offset: 1 }}>
             <div className={aboutStyles.imgContainer}>
               <Img fluid={data.packet2.childImageSharp.fluid} />
             </div>
@@ -106,28 +120,57 @@ const About = () => {
         </Row>
       </Container>
       <Container fluid className="pt-5">
-        <Row className="justify-content-center py-5">
+        <Row className="justify-content-around mt-5">
           <Col
-            xs={{ span: 12, order: "first" }}
-            md={{ span: 12, offset: 5, order: "first" }}
+            className="pt-2"
+            xs={{ span: 8 }}
+            md={{ span: 6 }}
+            lg={{ span: 3 }}
           >
-            <h3 className="display-4" style={{ color: "#095391" }}>
-              Full range of products
-            </h3>
-            <p className={aboutStyles.subHeading}>
-              Custom-tailored solutions for your specific needs
-            </p>
+            <Img
+              className={aboutStyles.upperProductImages}
+              fluid={data.bathroomCleaner.childImageSharp.fluid}
+            />
+          </Col>
+          <Col
+            className="pt-4"
+            xs={{ span: 8 }}
+            md={{ span: 6 }}
+            lg={{ span: 3 }}
+          >
+            <Img
+              className={aboutStyles.upperProductImages}
+              fluid={data.windowCleaner.childImageSharp.fluid}
+            />
           </Col>
         </Row>
-        <Row className="justify-content-center align-items-center mt-5">
-          <Col className="pt-2" xs={{ span: 8 }} md={{ span: 2 }}>
-            <Img fluid={data.greenProduct.childImageSharp.fluid} />
+        <Row className="justify-content-center align-items-center">
+          <Col className="" xs={{ span: 8 }} md={{ span: 7 }} lg={{ span: 3 }}>
+            <Img fluid={data.allPurpose.childImageSharp.fluid} />
           </Col>
-          <Col className="pt-4" xs={{ span: 12 }} md={{ span: 4 }}>
-            <Img fluid={data.oxyProduct.childImageSharp.fluid} />
+        </Row>
+        <Row className="justify-content-around">
+          <Col
+            className="pt-2"
+            xs={{ span: 8 }}
+            md={{ span: 6 }}
+            lg={{ span: 3 }}
+          >
+            <Img
+              className={aboutStyles.lowerProductImages}
+              fluid={data.handsoapBag.childImageSharp.fluid}
+            />
           </Col>
-          <Col className="pt-4" xs={{ span: 8 }} md={{ span: 2 }}>
-            <Img fluid={data.bottleProduct.childImageSharp.fluid} />
+          <Col
+            className="pt-2"
+            xs={{ span: 8 }}
+            md={{ span: 6 }}
+            lg={{ span: 3 }}
+          >
+            <Img
+              className={aboutStyles.lowerProductImages}
+              fluid={data.handsoapBottle.childImageSharp.fluid}
+            />
           </Col>
         </Row>
       </Container>
