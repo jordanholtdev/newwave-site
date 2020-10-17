@@ -1,45 +1,42 @@
 import React, { useRef, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row } from "react-bootstrap";
-import gsap from "gsap";
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Container, Row } from "react-bootstrap"
+import gsap from "gsap"
 import BackgroundImage from "gatsby-background-image"
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import introStyles from "../styles/intro.module.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import introStyles from "../styles/intro.module.css"
 
-gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(ScrollTrigger)
 
 const Intro = () => {
+  // animation vars
 
-    // animation vars
+  let triggerEl = useRef(null)
+  let title = useRef(null)
 
-    let triggerEl = useRef(null);
-    let title = useRef(null);
+  // gsap animations
 
-    // gsap animations
-   
-    useEffect(() => {
-      let introTL = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerEl,         
-          start: "center bottom",
-          end: "center top",
-          scrub: true,
-        },
-      });
-  
-      introTL.from(title, {
-        y: '100',
-        opacity: 0,
-        ease: "power3.inout",       
-      })
-    });
-    
+  useEffect(() => {
+    let introTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: triggerEl,
+        start: "top 80%",
+        end: "bottom 100px",
+        scrub: true,
+      },
+    })
 
-    const data = useStaticQuery(graphql`
+    introTL.from(title, {
+      y: "400",
+      opacity: 0,
+      ease: "power3.inout",
+    })
+  })
+
+  const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "corn-field.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "wave-image.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1800) {
             ...GatsbyImageSharpFluid
@@ -60,18 +57,20 @@ const Intro = () => {
         >
           <Container>
             <Row className={introStyles.textWrapper} ref={el => (title = el)}>
-            <h1 className="text-center" >
-              We provide excellence to the part of the value chain we know best
-              <span className={introStyles.textAccent}> and pick great partners to build the rest.</span>            
-            </h1>
-            </Row>           
+              <h1 className="text-center text-light">
+                We provide excellence to the part of the value chain we know
+                best
+                <span className={introStyles.textAccent}>
+                  {" "}
+                  and pick great partners to build the rest.
+                </span>
+              </h1>
+            </Row>
           </Container>
         </BackgroundImage>
       </Row>
     </Container>
   )
-
 }
 
-
-export default Intro;
+export default Intro

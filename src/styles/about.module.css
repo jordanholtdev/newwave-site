@@ -10,5 +10,14 @@
 
 .imgContainer {
   overflow: hidden;
-  max-width: 700px;
+  max-width: 900px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .lowerProductImages {
+    top: -150px;
+  }
+  .upperProductImages {
+    top: 150px;
+  }
 }
